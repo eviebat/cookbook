@@ -1,4 +1,36 @@
-<h1><%= @post.title %></h1>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <h1><%= @post.title %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <h3><%= @post.mealtype %><h3>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col">
+      <h3>Ingredients<h3>
+  </div>
+</div>
+<% @post.ingredients.each do |i| %>
+    <div class="row"><div class="col"><li><%= i %></li></div></div>
+<% end %>
+<div class="row">
+<div class="col">
+    <h3>Steps:<h3>
+</div>
+</div>
+<ol>
+<% @post.steps.each do |s| %>
+  <div class="row"><div class="col"><li><%= s %></li></div></div>
+<% end %>
+</ol>
 <p>Views: <%= @post.views %></p>
 
 <%= link_to 'Back to Home', root_path %>
+</div>

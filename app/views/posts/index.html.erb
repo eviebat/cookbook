@@ -1,18 +1,19 @@
-<h1>The Best Blog Ever</h1>
-<br/>
+<div class="container">
+<div class="card-columns">
 <% if @posts.count > 0 %>
   <% @posts.each do |post| %>
-    <h2><%= post.title %></h2>
-    <h4><%= post.mealtype %></h4>
-    <h4>ingredients</h4>
-    <% post.ingredients.each do |i| %>
-      <li><%= i %></li>
-      <% end %>
-    <h4>Steps</h4>
-    <% post.steps.each do |s| %>
-      <li><%= s %></li>
-      <% end %>
-  <% end %>
+    <div class="card">  
+    <div class="card-header">
+    <%=  post.title %>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= truncate post.mealtype, length: 50 %></p>
+      <a href="#" class="card-link"><%= link_to 'View Recipe',  show_post_path(id: post.id) %></a>
+    </div>
+    </div>
+   <% end %>
+   </div></div>
 <% else %>
   <h2>Darn, looks like we don’t have anything...</h2>
 <% end %>
+</div>

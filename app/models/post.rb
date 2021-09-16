@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-    enum mealtype: [:breakfast, :lunch, :dinner, :snack]
+    enum mealtype: [:Breakfast, :Lunch, :Dinner, :Snack]
     validates_presence_of :title
     validates_presence_of :ingredients
     validates_presence_of :steps
