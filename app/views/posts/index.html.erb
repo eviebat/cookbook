@@ -1,0 +1,18 @@
+<h1>The Best Blog Ever</h1>
+<br/>
+<% if @posts.count > 0 %>
+  <% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <h4><%= post.mealtype %></h4>
+    <h4>ingredients</h4>
+    <% post.ingredients.each do |i| %>
+      <li><%= i %></li>
+      <% end %>
+    <h4>Steps</h4>
+    <% post.steps.each do |s| %>
+      <li><%= s %></li>
+      <% end %>
+  <% end %>
+<% else %>
+  <h2>Darn, looks like we don’t have anything...</h2>
+<% end %>
